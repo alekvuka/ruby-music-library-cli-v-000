@@ -1,8 +1,11 @@
 require 'pry'
 
+<<<<<<< HEAD
 include Concerns::Findable
 
 
+=======
+>>>>>>> 79d5ebc5addf4b4468f9f0d72b1842e1c48e8c19
 class Artist
 
   attr_accessor :name
@@ -11,6 +14,7 @@ class Artist
   def initialize(name)
     @name = name
     @songs = Array.new
+    @genres = Array.new
   end
 
   def songs
@@ -27,12 +31,31 @@ class Artist
     @songs
   end
 
+<<<<<<< HEAD
   def genres
     genres = Array.new
     @songs.each do |song|
       genres << song.genre
     end
     genres.uniq
+=======
+#  def genres=(genre)
+#    if @genres.include?(genre) == false
+#      @genres << genre
+#    end
+#  end
+
+  def genres
+
+    binding.pry
+
+    all_songs = self.songs
+    all_songs.each do |song|
+      @genres << song.genre
+    end
+    @genres
+
+>>>>>>> 79d5ebc5addf4b4468f9f0d72b1842e1c48e8c19
   end
 
   def self.all
